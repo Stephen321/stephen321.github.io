@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block style %}{% static 'home/style.css' %}{% endblock %}
+
+{% block content %}
+<h1>test this is the homepage</h1>
+the value of test is: {{ test }}
+{% endblock %}

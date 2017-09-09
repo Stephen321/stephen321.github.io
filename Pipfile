@@ -2,5 +2,11 @@
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
-[packages]
+[dev-packages]
+autopep8 = "*"
 pylint = "*"
+pylint-django = "*"
+
+[packages]
+django = "*"
+psycopg2 = "*"

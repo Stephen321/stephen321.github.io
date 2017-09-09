@@ -1,0 +1,25 @@
+{
+  "name": "ennissite",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browser-sync": "browser-sync start --files \"./**/*.html\" \"./**/*.js\" \"./**/*.css\" \"./**/*.py\" --proxy localhost:8000 --reload-delay=300 --reload-debounce=500",
+    "runserver": "pipenv run python manage.py runserver",
+    "dev": "npm-run-all -p runserver browser-sync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stephen321/EnnisSite.git"
+  },
+  "author": "https://github.com/Stephen321",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stephen321/EnnisSite/issues"
+  },
+  "homepage": "https://github.com/Stephen321/EnnisSite#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "npm-run-all": "^4.1.1"
+  }
+}
