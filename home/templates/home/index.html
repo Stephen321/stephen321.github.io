@@ -5,6 +5,120 @@
 {% block style %}{% static 'home/style.css' %}{% endblock %}
 
 {% block content %}
-<h1>test this is the homepage</h1>
-the value of test is: {{ test }}
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url({% static 'home/images/swing.jpg' %})">
+            <div class="carousel-caption d-none d-md-block">
+            <h3>Swing set</h3>
+            <p>This is a description for the first slide.</p>
+            </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url({% static 'home/images/swingseat.jpg' %})">
+            <div class="carousel-caption d-none d-md-block">
+            <h3></h3>
+            <p>This is a description for the second slide.</p>
+            </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url({% static 'home/images/fence2.jpg' %})">
+            <div class="carousel-caption d-none d-md-block">
+            <h3>Fences</h3>
+            <p>This is a description for the third slide.</p>
+            </div>
+        </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row ">
+    <div class="col-sm-8 ">
+    <h2 class="mt-4">What We Do</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
+    <p>
+        <a class="btn btn-primary btn-lg" href="#">About</a>
+    </p>
+    </div>
+    <div class="col-sm-4">
+    <h2 class="mt-4">Contact Us</h2>
+    <address>
+        <strong>Ennis</strong>
+        <br>Prosperous
+        <br> Co. Kildare, AB1 41AD
+        <br>
+    </address>
+    <address>
+        <abbr title="Phone">P:</abbr>
+        045 1235912
+        <br>
+        <abbr title="Email">E:</abbr>
+        <a href="mailto:#">name@hotmail.com</a>
+    </address>
+    </div>
+</div>
+<!-- /.row -->
+
+<h2 class="mt-4">Portfolio</h2>
+<div class="row">
+    <div class="col-sm-4 my-4">
+    <div class="card">
+        <img class="card-img-top" src="{% static 'home/images/bench.jpg' %}" alt="">
+        <div class="card-body">
+        <h4 class="card-title">Benches</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+        </div>
+        <div class="card-footer">
+        <a href="#" class="btn btn-primary">Find Out More!</a>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-4 my-4">
+    <div class="card">
+        <img class="card-img-top" src="{% static 'home/images/chair.jpg' %}" alt="">
+        <div class="card-body">
+        <h4 class="card-title">Chairs</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+        </div>
+        <div class="card-footer">
+        <a href="#" class="btn btn-primary">Find Out More!</a>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-4 my-4">
+    <div class="card">
+        <img class="card-img-top" src="{% static 'home/images/gate.jpg' %}" alt="">
+        <div class="card-body">
+        <h4 class="card-title">Gates</h4>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+        </div>
+        <div class="card-footer">
+        <a href="#" class="btn btn-primary">Find Out More!</a>
+        </div>
+    </div>
+    </div>
+
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /.container -->
 {% endblock %}
