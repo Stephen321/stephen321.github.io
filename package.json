@@ -4,10 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "browser-sync": "browser-sync start --files \"./**/*.html\" \"./**/*.js\" \"./**/*.css\" \"./**/*.py\" --proxy localhost:8000 --reload-delay=300 --reload-debounce=500",
-    "runserver": "pipenv run python manage.py runserver",
-    "migrate": "pipenv run python manage.py migrate",
-    "dev": "npm-run-all -p runserver browser-sync"
+    "browser-sync": "browser-sync start --files \"./**/*.html\" \"./**/*.js\" \"./**/*.css\" \"./**/*.py\" --proxy localhost:5000 --reload-delay=300 --reload-debounce=500"
   },
   "repository": {
     "type": "git",

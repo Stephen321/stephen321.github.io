@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 
-{% load static %}
-
-{% block style %}{% static 'home/style.css' %}{% endblock %}
+{% block style %}{{ url_for('static', filename='style.css') }}{% endblock %}
 
 {% block content %}
 <header>
@@ -14,21 +12,21 @@
         </ol>
         <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url({% static 'home/images/swing.jpg' %})">
+        <div class="carousel-item active" style="background-image: url({{ url_for('static', filename='images/swing.jpg') }})">
             <div class="carousel-caption d-none d-md-block">
             <h3>Swing set</h3>
             <p>This is a description for the first slide.</p>
             </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url({% static 'home/images/swingseat.jpg' %})">
+        <div class="carousel-item" style="background-image: url({{ url_for('static', filename='images/swingseat.jpg') }})">
             <div class="carousel-caption d-none d-md-block">
             <h3></h3>
             <p>This is a description for the second slide.</p>
             </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url({% static 'home/images/fence2.jpg' %})">
+        <div class="carousel-item" style="background-image: url({{ url_for('static', filename='images/fence2.jpg') }})">
             <div class="carousel-caption d-none d-md-block">
             <h3>Fences</h3>
             <p>This is a description for the third slide.</p>
@@ -49,7 +47,7 @@
 <!-- Page Content -->
 <div class="container">
 
-    <div class="row ">
+<div class="row ">
     <div class="col-sm-8 ">
     <h2 class="mt-4">What We Do</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
@@ -81,7 +79,7 @@
 <div class="row">
     <div class="col-sm-4 my-4">
     <div class="card">
-        <img class="card-img-top" src="{% static 'home/images/bench.jpg' %}" alt="">
+        <img class="card-img-top" src="{{ url_for('static', filename='images/bench.jpg') }}" alt="">
         <div class="card-body">
         <h4 class="card-title">Benches</h4>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
@@ -93,7 +91,7 @@
     </div>
     <div class="col-sm-4 my-4">
     <div class="card">
-        <img class="card-img-top" src="{% static 'home/images/chair.jpg' %}" alt="">
+        <img class="card-img-top" src="{{ url_for('static', filename='images/chair.jpg') }}" alt="">
         <div class="card-body">
         <h4 class="card-title">Chairs</h4>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
@@ -105,7 +103,7 @@
     </div>
     <div class="col-sm-4 my-4">
     <div class="card">
-        <img class="card-img-top" src="{% static 'home/images/gate.jpg' %}" alt="">
+        <img class="card-img-top" src="{{ url_for('static', filename='images/gate.jpg') }}" alt="">
         <div class="card-body">
         <h4 class="card-title">Gates</h4>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
