@@ -1,122 +1,751 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
 
-{% block style %}{{ url_for('static', filename='style.css') }}{% endblock %}
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Stephen Ennis</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-{% block content %}
-<header>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url({{ url_for('static', filename='images/swing.jpg') }})">
-            <div class="carousel-caption d-none d-md-block">
-            <h3>Swing set</h3>
-            <p>This is a description for the first slide.</p>
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}" >
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}" >
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/media-queries.css') }}" >
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}" >
+
+   <!-- Script
+   ================================================== -->
+	<script src="{{ url_for('static', filename='js/modernizr.js') }}" ></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Works</a></li>
+            <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">I'm Stephen Ennis.</h1>
+            <h3>I'm a <span>software engineer</span> and <span>web developer</span>. <a class="smoothscroll" href="#about">Start scrolling</a>
+            to learn more <a class="smoothscroll" href="#about">about me</a>.</h3>            <ul class="social">
+               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            <img class="profile-pic"  src="{{ url_for('static', filename='images/profilepic.jpg') }}"  alt="" />
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am a hardworking and passionate individual with a big interest for games development
+                 and network programming. I am a recent graduate awarded with a 2nd Class Grade 1
+                  Bachelor's degree (Honours) in Computer Games Development, which has exposed me
+                   to current technologies and have learned to quickly adapt through them. 
+            </p>
+
+            <div class="row">
+
+               <div class="columns contact-details">
+
+                  <h2>Contact Details</h2>
+                  <p class="address">
+						   <span>Stephen Ennis</span><br>
+						   <span>Naas<br>
+                                 Kildare<br>
+                                 Ireland<br>
+                     </span><br>
+						   <span>(123)456-7890</span><br>
+                     <span>anyone@website.com</span>
+					   </p>
+
+               </div>
+
+               <div class="columns download">
+                  <p>
+                     <a href="{{ url_for('static', filename='StephenEnnisResume.pdf') }}" class="button"><i class="fa fa-download"></i>Download Resume</a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+   <!-- Resume Section
+   ================================================== -->
+   <section id="resume">
+
+      <!-- Education
+      ----------------------------------------------- -->
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Education</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>BSc (Honours) Computer Games Development</h3>
+                  <p class="info">Institute of Technology, Carlow<span>&bull;</span> <em class="date">2013-2017</em></p>
+
+                  <p>
+                        Results - 2nd Class Grade 1 Honours, with an average grade of 85% in previous years.
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+      <!-- Work
+      ----------------------------------------------- -->
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Experience</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Fidelity Investments, Galway, Ireland</h3>
+                  <p class="info">Junior Software Engineer <span>&bull;</span> <em class="date">April 2016 - Augst 2016</em></p>
+
+                  <p>
+                    <ul>
+                      <li>Heavily used Javascript as part of a project to extend the capabilities of the teams Jira usage</li>
+                      <li>Using Splunk for searching and analysing log files to determine usage and represent the findings through graphs/charts</li>
+                      <li>Globally collaborating with teams from America and India to investigate business requirements</li>
+                    </ul>
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+
+      <!-- Skills
+      ----------------------------------------------- -->
+      <div class="row skill">
+
+         <div class="three columns header-col">
+            <h1><span>Skills</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <p>
+              <ul>
+              <li>Proficiency in Object Orientated Programming Languages (in order of strength): C++, Python, JavaScript,  C#, HTML + CSS, GLSL. </li>
+              <li>Technologies (in order of strength): SFML, SDL, Flask, Unity, XNA, Cocos2dx, Ogre3D</li>
+              <li>Excellent knowledge of Linear Algebra, Vectors, Matrices, Quaternion rotations, 3D geometry</li>
+              <li>Excellent with version control through use of git + Github </li>
+              <li>Understanding of the rendering pipeline, OpenGL for 2D and 3D rendering, shaders</li>
+              <li>Operating Systems: Windows, Android and some experience with Linux (Ubuntu Server, Ubuntu Gnome)</li>
+              <li>Adept in documentation in regards to their design and to further detail its technicality using UML.</li>
+              </ul>
+            </p>
+
+				<div class="bars">
+
+				   <ul class="skills">
+					    <li><span class="bar-expand cpp"></span><em>C++</em><p></p>C++11, data structures and algorithms</li><br>
+                        <li><span class="bar-expand oop"></span><em>Object orientated Programming</em> <p></p>Design patterns, UML</li><br>
+						<li><span class="bar-expand python"></span><em>Python</em> <p></p>Flask, Django</li><br>
+						<li><span class="bar-expand web-tech"></span><em>Javascript/HTML/CSS</em> <p></p>Javascript, jQuery and some experience with NodeJs</li><br>
+						<li><span class="bar-expand git"></span><em>Git version control</em> <p></p>Github, Git Bash</li><br>
+                        <li><span class="bar-expand game-engines"></span><em>Game Engines</em> <p></p>C#: Unity, XNA <br>
+                            C++: SFML, SDL, Cocos2dx, Ogre3d<br>
+                            Java: Libgdx</li><br><br>
+                        <li><span class="bar-expand linux"></span><em>Linux</em> <p></p>Ubuntu server, Ubuntu GNOME</li><br>
+					</ul>
+
+				</div><!-- end skill-bars -->
+
+			</div> <!-- main-col end -->
+
+      </div> <!-- End skills -->
+
+   </section> <!-- Resume Section End-->
+
+
+   <!-- Portfolio Section
+   ================================================== -->
+   <section id="portfolio">
+
+      <div class="row">
+
+         <div class="twelve columns collapsed">
+
+            <h1>Check Out Some of My Work.</h1>
+
+            <!-- portfolio-wrapper -->
+            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+
+          	   <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-01" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/prison-escape.png') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Prison Escape</h5>
+                              <p>Game</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-02" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/knightmare-rush.jpg') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Knightmare Rush</h5>
+                              <p>Game</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-03" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/sdl-2d-camera.jpg') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>SDL 2D Camera</h5>
+                              <p>Library</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-04" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/bumper-racer.png') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Bumper Racer</h5>
+                              <p>Game</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-05" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/mu.png') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Malevolence Unfolded</h5>
+                              <p>Game</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-06" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/dotai.jpg') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Defenders Of The AI</h5>
+                              <p>Game</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-07" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/fyp.jpg') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Research Project</h5>
+                              <p>Research</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div> <!-- item end -->
+
+               <div class="columns portfolio-item">
+                  <div class="item-wrap">
+
+                     <a href="#modal-08" title="">
+                        <img alt="" src="{{ url_for('static', filename='images/portfolio/colourflood.png') }}" >
+                        <div class="overlay">
+                           <div class="portfolio-item-meta">
+          					      <h5>Colour Flood</h5>
+                              <p>Game</p>
+          					   </div>
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                     </a>
+
+                  </div>
+          		</div>  <!-- item end -->
+
+            </div> <!-- portfolio-wrapper end -->
+
+         </div> <!-- twelve columns end -->
+
+
+         <!-- Modal Popup
+	      --------------------------------------------------------------- -->
+
+         <div id="modal-01" class="popup-modal mfp-hide">
+              <iframe class="modal-embed" src="https://www.youtube.com/embed/GM1gLR-rfUw?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw"  gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+		      <div class="description-box">
+                  <h4>Prison Escape</h4>
+                 
+			      <p>Participated in the 39th Ludum Dare and completed a game from scratch within 48 hours over one weekend.
+                    Planning was a major part of this project as I had a limited time and so created prototypes and
+                    brainstormed ideas to quickly decide on the mechanics and goal of the game I would create. Through
+                    careful time management and execution, I ranked in the top 300 in multiple categories in my first entry.</p>
+               <span class="categories"><i class="fa fa-tag"></i>SFML, C++</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/PrisonEscape" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
             </div>
-        </div>
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url({{ url_for('static', filename='images/swingseat.jpg') }})">
-            <div class="carousel-caption d-none d-md-block">
-            <h3></h3>
-            <p>This is a description for the second slide.</p>
+
+	      </div><!-- modal-01 End -->
+
+         <div id="modal-02" class="popup-modal mfp-hide">
+
+            <iframe class="modal-embed" src="https://www.youtube.com/embed/lJrxClgb6_Q?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw" gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                
+		      <div class="description-box">
+			      <h4>Knightmare Rush</h4>
+			      <p>I entered the Games Fleadh in 2015 which takes place in Thurles. I was part of a 3 person team. I was 
+                    responsible for designing and coding the User Interface and Achievement system. I also worked on
+                    fixing issues with gameplay and managing documentation. The game ultimately won an award for Best
+                    in Animation.<p>
+               <span class="categories"><i class="fa fa-tag"></i>Unity, C#</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/KnightmareRush-GamesFleadh2015" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
             </div>
-        </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url({{ url_for('static', filename='images/fence2.jpg') }})">
-            <div class="carousel-caption d-none d-md-block">
-            <h3>Fences</h3>
-            <p>This is a description for the third slide.</p>
+
+	      </div><!-- modal-02 End -->
+
+         <div id="modal-03" class="popup-modal mfp-hide">
+                <iframe class="modal-embed" src="https://www.youtube.com/embed/4LlU026tucw?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw" gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+             <div class="description-box">
+			      <h4>SDL 2D Camera</h4>
+			      <p> A project with the goal of creating a tool in which other developers can simply add to their codebase
+                    as a component. Created a Camera system with functionality for panning, zooming, restricting to axis,
+                    snap to contain points, converting from world to camera coordinates and back, influence zones to
+                    automatically move the camera away or to locations, shake, view culling and configuring different 
+                    properties . I had to plan my approach using a Design Document and a Technical Document in which I 
+                    created sequence diagrams, class diagram and class responsibility cards. I also had to create a User 
+                    guide which would act as the documentation for my library. I designed and coded with reusability and 
+                    clarity in mind for end users.</p>
+               <span class="categories"><i class="fa fa-tag"></i>SDL, C++, Library</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/Camera2D-SDL" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
             </div>
-        </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-        </a>
-    </div>
-</header>
 
-<!-- Page Content -->
-<div class="container">
+	      </div><!-- modal-03 End -->
 
-<div class="row ">
-    <div class="col-sm-8 ">
-    <h2 class="mt-4">What We Do</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-    <p>
-        <a class="btn btn-primary btn-lg" href="#">About</a>
-    </p>
-    </div>
-    <div class="col-sm-4">
-    <h2 class="mt-4">Contact Us</h2>
-    <address>
-        <strong>Ennis</strong>
-        <br>Prosperous
-        <br> Co. Kildare, AB1 41AD
-        <br>
-    </address>
-    <address>
-        <abbr title="Phone">P:</abbr>
-        045 1235912
-        <br>
-        <abbr title="Email">E:</abbr>
-        <a href="mailto:#">name@hotmail.com</a>
-    </address>
-    </div>
-</div>
-<!-- /.row -->
+         <div id="modal-04" class="popup-modal mfp-hide">
 
-<h2 class="mt-4">Portfolio</h2>
-<div class="row">
-    <div class="col-sm-4 my-4">
-    <div class="card">
-        <img class="card-img-top" src="{{ url_for('static', filename='images/bench.jpg') }}" alt="">
-        <div class="card-body">
-        <h4 class="card-title">Benches</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-        </div>
-        <div class="card-footer">
-        <a href="#" class="btn btn-primary">Find Out More!</a>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm-4 my-4">
-    <div class="card">
-        <img class="card-img-top" src="{{ url_for('static', filename='images/chair.jpg') }}" alt="">
-        <div class="card-body">
-        <h4 class="card-title">Chairs</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
-        </div>
-        <div class="card-footer">
-        <a href="#" class="btn btn-primary">Find Out More!</a>
-        </div>
-    </div>
-    </div>
-    <div class="col-sm-4 my-4">
-    <div class="card">
-        <img class="card-img-top" src="{{ url_for('static', filename='images/gate.jpg') }}" alt="">
-        <div class="card-body">
-        <h4 class="card-title">Gates</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-        </div>
-        <div class="card-footer">
-        <a href="#" class="btn btn-primary">Find Out More!</a>
-        </div>
-    </div>
-    </div>
+                <iframe class="modal-embed" src="https://www.youtube.com/embed/2pgoQKorleo?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw" gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                
+		      <div class="description-box">
+			      <h4>Bumper Racer</h4>
+			      <p> Many group projects were undertaken throughout my college course which served to
+                    emphasise the importance of teamwork. Real World Modelling was a module in which we
+                    worked in teams of 4-6 people over multiple long projects in an agile way with daily
+                    stand up meetings, sprints and evolving documentation. ARGO was a month long group
+                    project done in teams of 4. The aim of the project was to try create a game using a
+                    professional(real world) development approach. I learned the importance of clear 
+                    communication when collaborating with others. I helped brainstorm and paper prototype
+                    game concepts. I took on the position of lead network developer and was responsible for
+                    the architecture of the network while making sure to inform everyone else of it’s
+                    progression through Jira and standups. I used a client-server approach through a Ubuntu
+                    server instance on Amazon Web Services. I wrote the server code using SDL_Net as this was
+                    the same library I was using to make the client side code and it allowed the same code to
+                    be shared for tasks such as the serialization of data. I created sessions and a session
+                    management system so multiple players and games could take place at the same time. I
+                    implemented many techniques in order to limit the effects of network issues and improve
+                    consistency while accounting for unexpected disconnections or time outs of players. Some
+                    techniques implemented: clock synchronization, packet rate limit, interpolation,
+                    extrapolation and linear convergence.
+                    </p>
+               <span class="categories"><i class="fa fa-tag"></i>SDL, SDL_Net, C++</span>
+		      </div>
 
-</div>
-<!-- /.row -->
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/Bumper-Racer-SDL" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
 
-</div>
-<!-- /.container -->
-{% endblock %}
+	      </div><!-- modal-04 End -->
+
+         <div id="modal-05" class="popup-modal mfp-hide">
+
+                <iframe class="modal-embed" src="https://www.youtube.com/embed/Oi1nhzTOlzo?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw" gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                
+		      <div class="description-box">
+			      <h4>Malevolence Unfolded</h4>
+			      <p> A pair project to design and create a game. I had to correctly interface with a
+                    controller, use a library for 3d sound effects (FMOD), use a collision detection
+                    library (Box2D) and an external map creation tool. This map creation tool allowed the
+                    creation of an isometric tiled map which then had to be exported to json and I parsed it
+                    within the game correctly.                         
+                  </p>
+               <span class="categories"><i class="fa fa-tag"></i>SFML, C++</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/MalevolenceUnfolded" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-05 End -->
+
+         <div id="modal-06" class="popup-modal mfp-hide">
+
+                <iframe class="modal-embed" src="https://www.youtube.com/embed/4qWlkTXsvIg?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw" gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                
+		      <div class="description-box">
+			      <h4>Defenders Of The AI</h4>
+			      <p> Pair project inspired by the 1981 Defender game highlighting the behaviour of artificial opponents.
+                    I implemented a Finite State Machine to achieve the different behaviours such as flocking, formations,
+                    and swarming.</p>
+               <span class="categories"><i class="fa fa-tag"></i>SFML, C++</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/DefendersOfTheAI" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-06 End -->
+
+         <div id="modal-07" class="popup-modal mfp-hide">
+
+                <iframe class="modal-embed" src="https://www.youtube.com/embed/bPaLwsQORms?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw" gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                
+		      <div class="description-box">
+			      <h4>How does a more tactically aware Artificial Intelligence implemented using a planning architecture (GOAP) perform in comparison to the random selection of decisions.</h4>
+			      <p>This was my fourth year research project where my goal was to investigate the performance of a
+                    particular approach to implementing artificial intelligence called Goal Oriented Action Planning (GOAP).
+                    This is where AI entities can be more tactically aware and respond more appropriately. My approach and
+                    findings can be seen in more depth in the readme section of the github source code link.</p>
+               <span class="categories"><i class="fa fa-tag"></i>SFML, C++</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/FYP" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-07 End -->
+
+         <div id="modal-08" class="popup-modal mfp-hide">
+
+                <iframe class="modal-embed" src="https://www.youtube.com/embed/dSTuNdInS80?list=PLn9-l8kkg87PzWmn7uGRBlUTwavOcUfOw" gesture="media" allow="encrypted-media" scrolling="no" frameborder="0" allowfullscreen></iframe>
+                
+		      <div class="description-box">
+			      <h4>Colour Flood</h4>
+			      <p>A game created in C# XNA using Visual Studio 2010 Express Edition. You must try to
+                    "flood" the board with the same animal type. The size of the board and style can be
+                    adjusted in the options screen. You have a limited amount of time to complete the game.</p>
+               <span class="categories"><i class="fa fa-tag"></i>XNA, C#</span>
+		      </div>
+
+            <div class="link-box">
+               <a href="https://github.com/Stephen321/Colourflood-XNA" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
+		         <a class="popup-modal-dismiss">Close</a>
+            </div>
+
+	      </div><!-- modal-01 End -->
+
+
+      </div> <!-- row End -->
+
+   </section> <!-- Portfolio Section End-->
+
+
+   <!-- Contact Section
+   ================================================== -->
+   <section id="contact">
+
+         <div class="row section-head">
+
+            <div class="two columns header-col">
+
+               <h1><span>Get In Touch.</span></h1>
+
+            </div>
+
+            <div class="ten columns">
+
+                  <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                  voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                  </p>
+
+            </div>
+
+         </div>
+
+         <div class="row">
+
+            <div class="eight columns">
+
+               <!-- form -->
+               <form action="" method="post" id="contactForm" name="contactForm">
+					<fieldset>
+
+                  <div>
+						   <label for="contactName">Name <span class="required">*</span></label>
+						   <input type="text" value="" size="35" id="contactName" name="contactName">
+                  </div>
+
+                  <div>
+						   <label for="contactEmail">Email <span class="required">*</span></label>
+						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+                  </div>
+
+                  <div>
+						   <label for="contactSubject">Subject</label>
+						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+                  </div>
+
+                  <div>
+                     <label for="contactMessage">Message <span class="required">*</span></label>
+                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                  </div>
+
+                  <div>
+                     <button class="submit">Submit</button>
+                     <span id="image-loader">
+                        <img alt="" src="{{ url_for('static', filename='images/loader.gif') }}" >
+                     </span>
+                  </div>
+
+					</fieldset>
+				   </form> <!-- Form End -->
+
+               <!-- contact-warning -->
+               <div id="message-warning"> Error boy</div>
+               <!-- contact-success -->
+				   <div id="message-success">
+                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+				   </div>
+
+            </div>
+
+
+            <aside class="four columns footer-widgets">
+
+               <div class="widget widget_contact">
+
+					   <h4>Address and Phone</h4>
+					   <p class="address">
+						   Jonathan Doe<br>
+						   1600 Amphitheatre Parkway <br>
+						   Mountain View, CA 94043 US<br>
+						   <span>(123) 456-7890</span>
+					   </p>
+
+				   </div>
+
+               <div class="widget widget_tweets">
+
+                  <h4 class="widget-title">Latest Tweets</h4>
+
+                  <ul id="twitter">
+                     <li>
+                        <span>
+                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
+                        <a href="#">http://t.co/CGIrdxIlI3</a>
+                        </span>
+                        <b><a href="#">2 Days Ago</a></b>
+                     </li>
+                     <li>
+                        <span>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi
+                        <a href="#">http://t.co/CGIrdxIlI3</a>
+                        </span>
+                        <b><a href="#">3 Days Ago</a></b>
+                     </li>
+                  </ul>
+
+		         </div>
+
+            </aside>
+
+      </div>
+
+   </section> <!-- Contact Section End-->
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>
+
+            <ul class="copyright">
+               <li>&copy; Copyright 2014 CeeVee</li>
+               <li>Design by <a href="http://www.styleshout.com/" title="Styleshout" target="_blank">Styleshout</a></li>   
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}" ><\/script>')</script>
+   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-migrate-1.2.1.min.js') }}" ></script>
+
+   <script src="{{ url_for('static', filename='js/jquery.flexslider.js') }}" ></script>
+   <script src="{{ url_for('static', filename='js/waypoints.js') }}" ></script>
+   <script src="{{ url_for('static', filename='js/jquery.fittext.js') }}" ></script>
+   <script src="{{ url_for('static', filename='js/magnific-popup.js') }}" ></script>
+   <script src="{{ url_for('static', filename='js/init.js') }}" ></script>
+
+</body>
+
+</html>
